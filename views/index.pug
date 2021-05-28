@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  br
+  h2 Import CSV file using NodeJS and MongoDB
+  br
+  p
+   a(href='javascript:void(0)' class='btn btn-primary' id='importdata') Import CSV   /here i'm importing the datasets file/
+   | &nbsp;&nbsp;&nbsp;
+   a(href='javascript:void(0)' class='btn btn-primary' id='fetchdata') Fetch Data   /fetching the data /
+  br  
+  p#message.alert.alert-success(style='display:none')
+  br
+  table.table.table-bordered
+    thead
+        tr
+            th #
+            th device
+            th t
+            th w
+            th p1
+            th p25 
+            th p10
+    tbody#trdata
+    db.product.ensureIndex({startTime:1})  /fetching the data as per time so that can be done by string comparison/
+        tr
+            td(colspan='3') Click on <strong>Import CSV</strong> button to import and save data to MongoDB. <br />Click on <strong>Fetch Data</strong> button to display data from database
